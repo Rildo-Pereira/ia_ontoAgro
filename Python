@@ -1,0 +1,8 @@
+src/
+  ├── main.py
+  ├── speech_recognizer.py
+  ├── ontology_query.py
+  ├── voice_synthesizer.py
+  ├── __init__.py
+requirements.txt
+README.md
