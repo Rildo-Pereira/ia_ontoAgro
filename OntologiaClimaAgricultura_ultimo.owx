@@ -1,0 +1,695 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura"
+     versionIRI="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura/1.0.0">
+    <Prefix name="" IRI="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura/"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal>A minha proposta é uma ontologia de dados climáticos para aplicações agrícolas utilizando o Integrated Forecast System (IFS) do ECMWF. Permitir que diferentes sistemas, programas e dispositivos &quot;conversem&quot; entre si de forma eficiente e transparente, compartilhando informações e funcionalidades sem problemas tambem considerar o reuso de dados, representando conceitos como localização, tempo, variáveis climáticas (temperatura, precipitação, etc.), fonte de dados e impactos climáticos na agricultura. O objetivo é fornecer uma base de conhecimento estruturada para aplicações como previsão de safras, gerenciamento de riscos e planejamento agrícola, auxiliando na tomada de decisão no setor</Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="#Abacaxi"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Abobora"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Alface"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AltaTemperatura"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AltaUmidade"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Arenoso"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Argiloso"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BaixaTemperatura"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BaixaUmidade"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Banana"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Calcario"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ChuvaIntensa"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ChuvaModerada"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CulturaPlantada"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DadosAgricolas"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DadosClimaticos"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EstresseHidrico"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Fungicidas"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Herbicidas"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ImpactoAgricola"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ImpactoComNome"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Inseticidas"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MediaTemperatura"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MediaUmidade"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Organico"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PragasEDoencas"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Precipitacao"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProblemasDeSolo"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProducaoDeFrutas"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProducaoDeGraos"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProducaoDeLegumes"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Quimico"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Seca"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Soja"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Temperatura"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TipoDeSolo"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Umidade"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UsoDeAgrotoxicos"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UsoDeFertilizantes"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#eDadosAgricolasDe"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#eDadosClimaticosDe"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#eInfluenciaDe"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#temDadosAgricolas"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#temDadosClimaticos"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#temInfluencia"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#ProducaoDeFrutas"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#ImpactoAgricola"/>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#temDadosAgricolas"/>
+                <ObjectUnionOf>
+                    <Class IRI="#Abacaxi"/>
+                    <Class IRI="#Banana"/>
+                </ObjectUnionOf>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#ProducaoDeGraos"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#ImpactoAgricola"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#temDadosAgricolas"/>
+                <Class IRI="#Soja"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#ProducaoDeLegumes"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#ImpactoAgricola"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#temDadosAgricolas"/>
+                <Class IRI="#Alface"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#temDadosClimaticos"/>
+                <Class IRI="#ChuvaIntensa"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#Abacaxi"/>
+        <Class IRI="#CulturaPlantada"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Abobora"/>
+        <Class IRI="#CulturaPlantada"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Alface"/>
+        <Class IRI="#CulturaPlantada"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AltaTemperatura"/>
+        <Class IRI="#Temperatura"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AltaUmidade"/>
+        <Class IRI="#Umidade"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Arenoso"/>
+        <Class IRI="#TipoDeSolo"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Argiloso"/>
+        <Class IRI="#TipoDeSolo"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BaixaTemperatura"/>
+        <Class IRI="#Temperatura"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BaixaUmidade"/>
+        <Class IRI="#Umidade"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Banana"/>
+        <Class IRI="#CulturaPlantada"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Calcario"/>
+        <Class IRI="#TipoDeSolo"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ChuvaIntensa"/>
+        <Class IRI="#Precipitacao"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ChuvaModerada"/>
+        <Class IRI="#Precipitacao"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CulturaPlantada"/>
+        <Class IRI="#DadosAgricolas"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EstresseHidrico"/>
+        <Class IRI="#ImpactoComNome"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EstresseHidrico"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#temDadosClimaticos"/>
+            <Class IRI="#AltaTemperatura"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EstresseHidrico"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#temDadosClimaticos"/>
+            <Class IRI="#Seca"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Fungicidas"/>
+        <Class IRI="#UsoDeAgrotoxicos"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Herbicidas"/>
+        <Class IRI="#UsoDeAgrotoxicos"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ImpactoAgricola"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ImpactoAgricola"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#temDadosAgricolas"/>
+            <Class IRI="#DadosAgricolas"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ImpactoAgricola"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#temDadosClimaticos"/>
+            <Class IRI="#DadosClimaticos"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ImpactoComNome"/>
+        <Class IRI="#ImpactoAgricola"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Inseticidas"/>
+        <Class IRI="#UsoDeAgrotoxicos"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MediaTemperatura"/>
+        <Class IRI="#Temperatura"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MediaUmidade"/>
+        <Class IRI="#Umidade"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Organico"/>
+        <Class IRI="#UsoDeFertilizantes"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PragasEDoencas"/>
+        <Class IRI="#ImpactoComNome"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PragasEDoencas"/>
+        <ObjectComplementOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#temDadosAgricolas"/>
+                <Class IRI="#Fungicidas"/>
+            </ObjectSomeValuesFrom>
+        </ObjectComplementOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PragasEDoencas"/>
+        <ObjectComplementOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#temDadosAgricolas"/>
+                <Class IRI="#Herbicidas"/>
+            </ObjectSomeValuesFrom>
+        </ObjectComplementOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PragasEDoencas"/>
+        <ObjectComplementOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#temDadosAgricolas"/>
+                <Class IRI="#Inseticidas"/>
+            </ObjectSomeValuesFrom>
+        </ObjectComplementOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Precipitacao"/>
+        <Class IRI="#DadosClimaticos"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProblemasDeSolo"/>
+        <Class IRI="#ImpactoComNome"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProblemasDeSolo"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#temDadosAgricolas"/>
+            <Class IRI="#Arenoso"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProducaoDeFrutas"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#temDadosAgricolas"/>
+            <Class IRI="#Abacaxi"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProducaoDeGraos"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#temDadosAgricolas"/>
+            <Class IRI="#Soja"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProducaoDeLegumes"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#temDadosAgricolas"/>
+            <Class IRI="#Abobora"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Quimico"/>
+        <Class IRI="#UsoDeFertilizantes"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Seca"/>
+        <Class IRI="#Precipitacao"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Soja"/>
+        <Class IRI="#CulturaPlantada"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Temperatura"/>
+        <Class IRI="#DadosClimaticos"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TipoDeSolo"/>
+        <Class IRI="#DadosAgricolas"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Umidade"/>
+        <Class IRI="#DadosClimaticos"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UsoDeAgrotoxicos"/>
+        <Class IRI="#DadosAgricolas"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UsoDeFertilizantes"/>
+        <Class IRI="#DadosAgricolas"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Abacaxi"/>
+        <Class IRI="#Alface"/>
+        <Class IRI="#Soja"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#AltaTemperatura"/>
+        <Class IRI="#BaixaTemperatura"/>
+        <Class IRI="#MediaTemperatura"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#AltaUmidade"/>
+        <Class IRI="#BaixaUmidade"/>
+        <Class IRI="#MediaUmidade"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Arenoso"/>
+        <Class IRI="#Argiloso"/>
+        <Class IRI="#Calcario"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#ChuvaIntensa"/>
+        <Class IRI="#ChuvaModerada"/>
+        <Class IRI="#Seca"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#CulturaPlantada"/>
+        <Class IRI="#TipoDeSolo"/>
+        <Class IRI="#UsoDeAgrotoxicos"/>
+        <Class IRI="#UsoDeFertilizantes"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#DadosAgricolas"/>
+        <Class IRI="#DadosClimaticos"/>
+        <Class IRI="#ImpactoAgricola"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#EstresseHidrico"/>
+        <Class IRI="#PragasEDoencas"/>
+        <Class IRI="#ProblemasDeSolo"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Fungicidas"/>
+        <Class IRI="#Herbicidas"/>
+        <Class IRI="#Inseticidas"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Organico"/>
+        <Class IRI="#Quimico"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Precipitacao"/>
+        <Class IRI="#Temperatura"/>
+        <Class IRI="#Umidade"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#ProducaoDeFrutas"/>
+        <Class IRI="#ProducaoDeGraos"/>
+        <Class IRI="#ProducaoDeLegumes"/>
+    </DisjointClasses>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#eDadosAgricolasDe"/>
+        <ObjectProperty IRI="#eInfluenciaDe"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#eDadosClimaticosDe"/>
+        <ObjectProperty IRI="#eInfluenciaDe"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#temDadosAgricolas"/>
+        <ObjectProperty IRI="#temInfluencia"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#temDadosClimaticos"/>
+        <ObjectProperty IRI="#temInfluencia"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#eDadosAgricolasDe"/>
+        <ObjectProperty IRI="#temDadosAgricolas"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#eDadosClimaticosDe"/>
+        <ObjectProperty IRI="#temDadosClimaticos"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#eInfluenciaDe"/>
+        <ObjectProperty IRI="#temInfluencia"/>
+    </InverseObjectProperties>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#temDadosAgricolas"/>
+    </FunctionalObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#eInfluenciaDe"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#temInfluencia"/>
+    </TransitiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#eDadosAgricolasDe"/>
+        <Class IRI="#DadosAgricolas"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#eDadosClimaticosDe"/>
+        <Class IRI="#DadosClimaticos"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#temDadosAgricolas"/>
+        <Class IRI="#ImpactoAgricola"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#temDadosClimaticos"/>
+        <Class IRI="#ImpactoAgricola"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#eDadosAgricolasDe"/>
+        <Class IRI="#ImpactoAgricola"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#eDadosClimaticosDe"/>
+        <Class IRI="#ImpactoAgricola"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#temDadosAgricolas"/>
+        <Class IRI="#DadosAgricolas"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#temDadosClimaticos"/>
+        <Class IRI="#DadosClimaticos"/>
+    </ObjectPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#AltaTemperatura</IRI>
+        <Literal>Temperaturas acima da média para a região.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#AltaUmidade</IRI>
+        <Literal>Alta concentração de vapor de água no ar.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#BaixaTemperatura</IRI>
+        <Literal>Temperaturas abaixo da média para a região.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#BaixaUmidade</IRI>
+        <Literal>Baixa concentração de vapor de água no ar.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Calcario</IRI>
+        <Literal>Solo com alta concentração de calcário, pode ser pedregoso e alcalino.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ChuvaIntensa</IRI>
+        <Literal>Precipitação de grande volume em curto período.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ChuvaModerada</IRI>
+        <Literal>Precipitação com volume dentro da média.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#CulturaPlantada</IRI>
+        <Literal>Tipo de planta cultivada em uma área agrícola.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DadosAgricolas</IRI>
+        <Literal>Define conceitos relacionados à agricultura.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DadosClimaticos</IRI>
+        <Literal>Representa os diferentes tipos de dados climáticos.
+
+Restrições:
+Os DadosClimaticos deve estar associada a uma Localizacao e um Tempo.
+Os DadosClimaticos deve ser derivada de um ModeloClimatico.
+Um TipoDeCultura deve ser cultivada em uma Localizacao.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#EstresseHidrico</IRI>
+        <Literal xml:lang="pt-br">DéficitHídrico: (Resultante de baixa precipitação e/ou evapotranspiração excessiva)
+ExcessoHídrico: (Resultante de precipitação excessiva e/ou drenagem insuficiente)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Fungicidas</IRI>
+        <Literal>Controlam fungos.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Herbicidas</IRI>
+        <Literal>Controlam ervas daninhas.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ImpactoAgricola</IRI>
+        <Literal>Representa o efeito das variáveis climáticas na agricultura.
+ImpactoAgricola é uma consequência da interação entre dados climáticos e agrícolas, sendo distinto de ambos</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Inseticidas</IRI>
+        <Literal>Controlam insetos.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MediaTemperatura</IRI>
+        <Literal>Temperaturas dentro da média para a região.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MediaUmidade</IRI>
+        <Literal>Concentração de vapor de água dentro da média.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Organico</IRI>
+        <Literal>Fertilizantes de origem natural (ex: esterco, compostagem).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PragasEDoencas</IRI>
+        <Literal xml:lang="pt-br">Pragas: (Infestação por insetos, ácaros, etc.)
+Doenças: (Infecção por fungos, bactérias, vírus, etc.)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ProblemasDeSolo</IRI>
+        <Literal xml:lang="pt-br">Erosão: (Perda de solo fértil por ação do vento e/ou água)
+Salinização: (Acúmulo excessivo de sais no solo)
+Compactação: (Redução da porosidade e permeabilidade do solo)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Quimico</IRI>
+        <Literal>Fertilizantes produzidos industrialmente.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Seca</IRI>
+        <Literal>Período prolongado sem chuva.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TipoDeSolo</IRI>
+        <Literal>Categoria de solo, classificada de acordo com sua composição e propriedades físicas.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#UsoDeAgrotoxicos</IRI>
+        <Literal>Produtos utilizados para controlar pragas e doenças em plantas</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#UsoDeFertilizantes</IRI>
+        <Literal>Produtos que fornecem nutrientes para as plantas.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#temDadosAgricolas</IRI>
+        <Literal>Relação específica entre ImpactoAgrícola e os dados agrícolas</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#temDadosClimaticos</IRI>
+        <Literal>Relação específica entre ImpactoAgrícola e os dados climáticos</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#temInfluencia</IRI>
+        <Literal>Relação genérica entre ImpactoAgrícola e os fatores que o influenciam.</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
