@@ -1,5 +1,5 @@
 from rdflib import Graph
-from ia_ontoAgro.src.terms import readable_terms
+from terms import readable_terms
 
 class OntologyQuery:
     def __init__(self, ontology_file: str):

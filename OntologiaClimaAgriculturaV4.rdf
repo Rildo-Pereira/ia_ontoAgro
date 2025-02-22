@@ -1,0 +1,668 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura/"
+     xml:base="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura">
+        <owl:versionIRI rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura/1.0.0"/>
+        <rdfs:comment>A minha proposta é uma ontologia de dados climáticos para aplicações agrícolas utilizando o Integrated Forecast System (IFS) do ECMWF. Permitir que diferentes sistemas, programas e dispositivos &quot;conversem&quot; entre si de forma eficiente e transparente, compartilhando informações e funcionalidades sem problemas tambem considerar o reuso de dados, representando conceitos como localização, tempo, variáveis climáticas (temperatura, precipitação, etc.), fonte de dados e impactos climáticos na agricultura. O objetivo é fornecer uma base de conhecimento estruturada para aplicações como previsão de safras, gerenciamento de riscos e planejamento agrícola, auxiliando na tomada de decisão no setor</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#eDadosAgricolasDe -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#eDadosAgricolasDe">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#eInfluenciaDe"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#temDadosAgricolas"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#DadosAgricolas"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#ImpactoAgricola"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#eDadosClimaticosDe -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#eDadosClimaticosDe">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#eInfluenciaDe"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#temDadosClimaticos"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#DadosClimaticos"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#ImpactoAgricola"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#eInfluenciaDe -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#eInfluenciaDe">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#temInfluencia"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#temDadosAgricolas -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#temDadosAgricolas">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#temInfluencia"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#ImpactoAgricola"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#DadosAgricolas"/>
+        <rdfs:comment>Relação específica entre ImpactoAgrícola e os dados agrícolas</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#temDadosClimaticos -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#temDadosClimaticos">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#temInfluencia"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#ImpactoAgricola"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#DadosClimaticos"/>
+        <rdfs:comment>Relação específica entre ImpactoAgrícola e os dados climáticos</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#temInfluencia -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#temInfluencia">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:comment>Relação genérica entre ImpactoAgrícola e os fatores que o influenciam.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Abacaxi -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Abacaxi">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#CulturaPlantada"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Abobora -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Abobora">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#CulturaPlantada"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Alface -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Alface">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#CulturaPlantada"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#AltaTemperatura -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#AltaTemperatura">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Temperatura"/>
+        <rdfs:comment>Temperaturas acima da média para a região.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#AltaUmidade -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#AltaUmidade">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Umidade"/>
+        <rdfs:comment>Alta concentração de vapor de água no ar.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Arenoso -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Arenoso">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#TipoDeSolo"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Argiloso -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Argiloso">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#TipoDeSolo"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#BaixaTemperatura -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#BaixaTemperatura">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Temperatura"/>
+        <rdfs:comment>Temperaturas abaixo da média para a região.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#BaixaUmidade -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#BaixaUmidade">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Umidade"/>
+        <rdfs:comment>Baixa concentração de vapor de água no ar.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Banana -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Banana">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#CulturaPlantada"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Calcario -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Calcario">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#TipoDeSolo"/>
+        <rdfs:comment>Solo com alta concentração de calcário, pode ser pedregoso e alcalino.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#ChuvaIntensa -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#ChuvaIntensa">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Precipitacao"/>
+        <rdfs:comment>Precipitação de grande volume em curto período.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#ChuvaModerada -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#ChuvaModerada">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Precipitacao"/>
+        <rdfs:comment>Precipitação com volume dentro da média.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#CulturaPlantada -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#CulturaPlantada">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#DadosAgricolas"/>
+        <rdfs:comment>Tipo de planta cultivada em uma área agrícola.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#DadosAgricolas -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#DadosAgricolas">
+        <rdfs:comment>Define conceitos relacionados à agricultura.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#DadosClimaticos -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#DadosClimaticos">
+        <rdfs:comment>Representa os diferentes tipos de dados climáticos.
+
+Restrições:
+Os DadosClimaticos deve estar associada a uma Localizacao e um Tempo.
+Os DadosClimaticos deve ser derivada de um ModeloClimatico.
+Um TipoDeCultura deve ser cultivada em uma Localizacao.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#EstresseHidrico -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#EstresseHidrico">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#ImpactoComNome"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#temDadosClimaticos"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#AltaTemperatura"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#temDadosClimaticos"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Seca"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="pt-br">DéficitHídrico: (Resultante de baixa precipitação e/ou evapotranspiração excessiva)
+ExcessoHídrico: (Resultante de precipitação excessiva e/ou drenagem insuficiente)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Fungicidas -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Fungicidas">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#UsoDeAgrotoxicos"/>
+        <rdfs:comment>Controlam fungos.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Herbicidas -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Herbicidas">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#UsoDeAgrotoxicos"/>
+        <rdfs:comment>Controlam ervas daninhas.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#ImpactoAgricola -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#ImpactoAgricola">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#temDadosAgricolas"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#DadosAgricolas"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#temDadosClimaticos"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#DadosClimaticos"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Representa o efeito das variáveis climáticas na agricultura.
+ImpactoAgricola é uma consequência da interação entre dados climáticos e agrícolas, sendo distinto de ambos</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#ImpactoComNome -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#ImpactoComNome">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#ImpactoAgricola"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Inseticidas -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Inseticidas">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#UsoDeAgrotoxicos"/>
+        <rdfs:comment>Controlam insetos.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#MediaTemperatura -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#MediaTemperatura">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Temperatura"/>
+        <rdfs:comment>Temperaturas dentro da média para a região.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#MediaUmidade -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#MediaUmidade">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Umidade"/>
+        <rdfs:comment>Concentração de vapor de água dentro da média.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Organico -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Organico">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#UsoDeFertilizantes"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Quimico"/>
+        <rdfs:comment>Fertilizantes de origem natural (ex: esterco, compostagem).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#PragasEDoencas -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#PragasEDoencas">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#ImpactoComNome"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:complementOf>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#temDadosAgricolas"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Fungicidas"/>
+                    </owl:Restriction>
+                </owl:complementOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:complementOf>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#temDadosAgricolas"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Herbicidas"/>
+                    </owl:Restriction>
+                </owl:complementOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:complementOf>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#temDadosAgricolas"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Inseticidas"/>
+                    </owl:Restriction>
+                </owl:complementOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="pt-br">Pragas: (Infestação por insetos, ácaros, etc.)
+Doenças: (Infecção por fungos, bactérias, vírus, etc.)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Precipitacao -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Precipitacao">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#DadosClimaticos"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#ProblemasDeSolo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#ProblemasDeSolo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#ImpactoComNome"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#temDadosAgricolas"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Arenoso"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="pt-br">Erosão: (Perda de solo fértil por ação do vento e/ou água)
+Salinização: (Acúmulo excessivo de sais no solo)
+Compactação: (Redução da porosidade e permeabilidade do solo)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#ProducaoDeFrutas -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#ProducaoDeFrutas">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#ImpactoAgricola"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#temDadosAgricolas"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Abacaxi"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Banana"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#temDadosAgricolas"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Abacaxi"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#ProducaoDeGraos -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#ProducaoDeGraos">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#ImpactoAgricola"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#temDadosAgricolas"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Soja"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#temDadosAgricolas"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Soja"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#ProducaoDeLegumes -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#ProducaoDeLegumes">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#ImpactoAgricola"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#temDadosAgricolas"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Alface"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#temDadosClimaticos"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#ChuvaIntensa"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#temDadosAgricolas"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Abobora"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Quimico -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Quimico">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#UsoDeFertilizantes"/>
+        <rdfs:comment>Fertilizantes produzidos industrialmente.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Seca -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Seca">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Precipitacao"/>
+        <rdfs:comment>Período prolongado sem chuva.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Soja -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Soja">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#CulturaPlantada"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Temperatura -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Temperatura">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#DadosClimaticos"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#TipoDeSolo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#TipoDeSolo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#DadosAgricolas"/>
+        <rdfs:comment>Categoria de solo, classificada de acordo com sua composição e propriedades físicas.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Umidade -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Umidade">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#DadosClimaticos"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#UsoDeAgrotoxicos -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#UsoDeAgrotoxicos">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#DadosAgricolas"/>
+        <rdfs:comment>Produtos utilizados para controlar pragas e doenças em plantas</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#UsoDeFertilizantes -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#UsoDeFertilizantes">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#DadosAgricolas"/>
+        <rdfs:comment>Produtos que fornecem nutrientes para as plantas.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Abacaxi"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Alface"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Soja"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#AltaTemperatura"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#BaixaTemperatura"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#MediaTemperatura"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#AltaUmidade"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#BaixaUmidade"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#MediaUmidade"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Arenoso"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Argiloso"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Calcario"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#ChuvaIntensa"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#ChuvaModerada"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Seca"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#CulturaPlantada"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#TipoDeSolo"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#UsoDeAgrotoxicos"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#UsoDeFertilizantes"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#DadosAgricolas"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#DadosClimaticos"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#ImpactoAgricola"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#EstresseHidrico"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#PragasEDoencas"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#ProblemasDeSolo"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Fungicidas"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Herbicidas"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Inseticidas"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Precipitacao"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Temperatura"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#Umidade"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#ProducaoDeFrutas"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#ProducaoDeGraos"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandr/ontologies/2025/0/OntoClimaAgricultura#ProducaoDeLegumes"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

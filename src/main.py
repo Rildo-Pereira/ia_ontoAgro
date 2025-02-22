@@ -1,13 +1,12 @@
-from ia_ontoAgro.src.speech_recognizer import SpeechRecognizer
-from ia_ontoAgro.src.ontology_query import OntologyQuery
-from ia_ontoAgro.src.voice_synthesizer import VoiceSynthesizer
-from ia_ontoAgro.src.text_summarizer import TextSummarizer
+from speech_recognizer import SpeechRecognizer
+from ontology_query import OntologyQuery
+from voice_synthesizer import VoiceSynthesizer
+from text_summarizer import TextSummarizer
 
 class MainApp:
     def __init__(self):
         self.speech_recognizer = SpeechRecognizer()
         self.ontology_query = OntologyQuery("OntologiaClimaAgriculturaV4.rdf")
-        # self.ontology_query = OntologyQuery("pizza.owl")
         self.voice_synthesizer = VoiceSynthesizer()
 
     def run(self, audio_path: str, output_path: str):
@@ -25,6 +24,6 @@ class MainApp:
         self.voice_synthesizer.synthesize(text_resume, output_path)
 
 if __name__ == "__main__":
-    fileName = 'P9'
+    fileName = 'Testeontoagro'
     app = MainApp()
-    app.run(audio_path=f"{fileName}.m4a", output_path=f"{fileName}.mp3")
+    app.run(audio_path=f"{fileName}.m4a", output_path=f"{fileName}_resposta.mp3")
